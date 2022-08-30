@@ -1,4 +1,4 @@
-let randomNumber = Math.random();
+
 
 
 const playerSelection = "rOck";
@@ -6,13 +6,22 @@ console.log(playerSelection);
 
 const computerSelection = getComputerChoice();
 
-const PSCase = playerSelection.toUpperCase();
-const CSCase = computerSelection.toUpperCase();
+
+
+function getRandomNumber() {
+    let randomNumb = Math.random();
+    return randomNumb;
+}
+
+function toCapitalize(stringText) {
+        stringText.toCapitalize();
+}
 
 
 function getComputerChoice() {
 
-    
+    let randomNumber = getRandomNumber();
+    console.log(randomNumber)
 
     if (randomNumber < 0.33) {
         return 'rock';
@@ -23,11 +32,14 @@ function getComputerChoice() {
     }
 }
 
-    console.log(getComputerChoice())
+    console.log(computerSelection);
 
 
 
 function playRound(playerSelection, computerSelection) {
+
+    let PSCase = playerSelection.toUpperCase();
+    let CSCase = computerSelection.toUpperCase();
 
 
 
@@ -57,10 +69,20 @@ console.log(" ");
 function game() {
     for (let i = 0; i < 5; i++) {
 
-        playRound();
-        console.log(playRound())
+        let playerSelection = prompt("Rock, paper, or scissors?");
+        console.log(playerSelection);
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+
+        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        
 
     }
+}
+
+function score(playerSelection, computerSelection) {
+    
 }
 
 game();
