@@ -6,6 +6,9 @@ console.log(playerSelection);
 
 const computerSelection = getComputerChoice();
 
+let playerScore = 0;
+let computerScore = 0;
+
 
 
 function getRandomNumber() {
@@ -46,16 +49,22 @@ function playRound(playerSelection, computerSelection) {
     if (PSCase == CSCase) {
         return "Draw";
     } else if (PSCase == "ROCK" && CSCase == "PAPER") {
+        computerScore += 1;
         return "You lose! Paper beats Rock!";
     } else if (PSCase == "ROCK" && CSCase == "SCISSORS") {
+        playerScore += 1;
         return "You win! Rock beats Scissors";
     } else if (PSCase == "PAPER" && CSCase == "ROCK") {
+        playerScore += 1;
         return "You win! Paper beats Rock";
     } else if (PSCase == "PAPER" && CSCase == "SCISSORS") {
+        computerScore += 1;
         return "You lose! Scissors beats Paper";
     } else if (PSCase == "SCISSORS" && CSCase == "ROCK") {
+        computerScore += 1;
         return "You lose! Rock beats Scissors"; 
     } else if (PSCase == "SCISSORS" && CSCase == "PAPER") {
+        playerScore += 1;
         return "You Win! Scissors beats Paper";
     }
 }
@@ -76,13 +85,21 @@ function game() {
 
         playRound(playerSelection, computerSelection);
         console.log(playRound(playerSelection, computerSelection));
+        console.log(" ");
         
+        if (playerScore > computerScore) {
+            console.log("You win!");
+        } else if (computerScore > playerScore) {
+            console.log("You lose!");
+        } else {
+            console.log("draw");
+        }
 
     }
 }
 
 function score(playerSelection, computerSelection) {
-    
+
 }
 
 game();
