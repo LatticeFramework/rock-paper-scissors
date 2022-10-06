@@ -1,8 +1,13 @@
 
+const btns = document.querySelectorAll('button');
+btns.forEach((btn) => {
 
-
-const playerSelection = "rOck";
-console.log(playerSelection);
+    btn.addEventListener('click', () => {
+        let playerSelection = btn.id;
+        console.log(playerSelection);
+        game(playerSelection)
+    })
+});
 
 const computerSelection = getComputerChoice();
 
@@ -69,16 +74,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function game(playerSelection) {
 
-console.log(" ");
-console.log("loop");
-console.log(" ");
-
-function game() {
-
-        let playerSelection = prompt("Rock, paper, or scissors?");
-        console.log(playerSelection);
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
 
@@ -98,6 +95,4 @@ function game() {
 function score(playerSelection, computerSelection) {
 
 }
-
-game();
 
