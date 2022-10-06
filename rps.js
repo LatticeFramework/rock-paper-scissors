@@ -76,7 +76,6 @@ console.log("loop");
 console.log(" ");
 
 function game() {
-    for (let i = 0; i < 5; i++) {
 
         let playerSelection = prompt("Rock, paper, or scissors?");
         console.log(playerSelection);
@@ -94,8 +93,6 @@ function game() {
         } else {
             console.log("draw");
         }
-
-    }
 }
 
 function score(playerSelection, computerSelection) {
